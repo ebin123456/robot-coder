@@ -1,0 +1,44 @@
+import win32com.client as comclt
+import thread
+import time
+import sys
+
+
+def get_txt(lang):
+    try:
+    	txt = open(langs[lang]).read()
+    	return txt
+    except:
+    	return "no input file"
+	thread.start_new()
+def start_inputing(txt):
+	wsh= comclt.Dispatch("WScript.Shell")
+	str_len = len(txt)
+	for i in range(0,str_len):
+		time.sleep(1)
+		wsh.SendKeys(txt[i])
+
+
+def main():
+    global langs
+    langs = {'python':'python.txt','php':'php.txt','css':'css.txt','javascript':'js.txt'}
+	try:
+		lang = sys.argv[1]
+		if not lang in langs:
+			lang = "python"
+	except:
+		lang = "python"
+    try:
+		time_t = sys.argv[1]
+		time_t = int(time_t)
+    except:
+    	time = 0
+    txt = get_txt(lang)
+    time = 60*time
+    time.sleep(time_t)
+    thread.start_new(start_inputing,(txt,)) 	
+
+
+if __name__ == '__main__':
+	main()
+
