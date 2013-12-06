@@ -27,7 +27,7 @@ Press CTRL+C to  stop robot coding
 
 
 ## why use this
-This tool made for employees wo working in hourly rate
+This tool made for employees who working in hourly rate
 this tool can foolish work capturing softwares
 
 ## what next
