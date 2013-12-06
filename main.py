@@ -32,13 +32,16 @@ def OnKeyboardEvent(event):
         sys.exit() 
 
 
-
-def main():
-    global langs
+def hook_detect():
     hm = pyHook.HookManager()
     hm.KeyDown = OnKeyboardEvent
     hm.HookKeyboard()
     pythoncom.PumpMessages()
+
+
+def main():
+    global langs
+    
     langs = {'python':'python.txt','php':'php.txt','css':'css.txt','javascript':'js.txt'}
     try:
         lang = sys.argv[1]
@@ -53,9 +56,11 @@ def main():
         time_t = 0
     txt = get_txt(lang)
     time_t = 60*time_t
+    thread.start_new(hook_detect,())
+    print 66
     time.sleep(time_t)
-    #thread.start_new(start_inputing,(txt,)) 	d
-    #start_inputing(txt)
+    
+    start_inputing(txt)
 
 if __name__ == '__main__':
 	main()
