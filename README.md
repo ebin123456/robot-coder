@@ -8,9 +8,12 @@ This program can foolish a computer by emitting fake keyboar event during inacti
 so the computer will think we are always actively  working (coding)
 
 ## How use it
+```bash
+
 git clone https://github.com/ebin123456/robot-coder test
 cd test
 python main.py php 2
+```
 
 this software will start 'coding' php after 2 minutes by running script like above
 
