@@ -30,6 +30,6 @@ Press CTRL+C to  stop robot coding.
 This tool made for employees who working in hourly rate.
 This tool can foolish work capturing softwares.
 
-## what next
+## what next?
 
 Need to make mac and linux version of this tool. 
